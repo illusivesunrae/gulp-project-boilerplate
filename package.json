@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/illusivesunrae/gulp-project-boilerplate#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "rollup": "^1.23.1",
+    "rollup-plugin-babel": "^4.3.3"
   }
 }
