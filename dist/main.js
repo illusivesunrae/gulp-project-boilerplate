@@ -1,50 +1,82 @@
-/*! 
-* gulp-project-boilerplate - @version 1.0.0
-
-* Copyright (C) 2018 The Trustees of Indiana University
-* SPDX-License-Identifier: BSD-3-Clause
-*/
 var Component = (function (exports) {
   'use strict';
 
-  class Alert {
-    constructor(options) {
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _readOnlyError(name) {
+    throw new Error("\"" + name + "\" is read-only");
+  }
+
+  var Alert =
+  /*#__PURE__*/
+  function () {
+    function Alert(options) {
+      _classCallCheck(this, Alert);
+
       this.handleClick = this.handleClick.bind(this);
       this.init(options);
     }
 
-    init(options) {
-      document.getElementById(options.id).closest('[aria-labelledby]').querySelector('[data-alert-close]').addEventListener('click', () => {
-        this.handleClick(options.id);
-      }, false);
-    }
+    _createClass(Alert, [{
+      key: "init",
+      value: function init(options) {
+        var _this = this;
 
-    handleClick(id) {
-      const dismissButton = event.target.closest('[data-alert-close]'); // If the target wasn't the dismiss button bail.
-
-      if (!dismissButton) return;
-      this.dismissAlert(id);
-    }
-
-    dismissAlert(id, callback) {
-      const alert = document.querySelector('[aria-labelledby="' + id + '"]');
-
-      if (!alert) {
-        alert = document.getElementById(id);
+        document.getElementById(options.id).closest('[aria-labelledby]').querySelector('[data-alert-close]').addEventListener('click', function () {
+          _this.handleClick(options.id);
+        }, false);
       }
+    }, {
+      key: "handleClick",
+      value: function handleClick(id) {
+        var dismissButton = event.target.closest('[data-alert-close]'); // If the target wasn't the dismiss button bail.
 
-      if (!alert) {
-        throw new Error('Could not find an alert with the id of ' + id + ' to dismiss.');
+        if (!dismissButton) return;
+        this.dismissAlert(id);
       }
+    }, {
+      key: "dismissAlert",
+      value: function dismissAlert(id, callback) {
+        var alert = document.querySelector('[aria-labelledby="' + id + '"]');
 
-      alert.remove();
+        if (!alert) {
+          alert = (_readOnlyError("alert"), document.getElementById(id));
+        }
 
-      if (callback && typeof callback === 'function') {
-        callback();
+        if (!alert) {
+          throw new Error('Could not find an alert with the id of ' + id + ' to dismiss.');
+        }
+
+        alert.remove();
+
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       }
-    }
+    }]);
 
-  }
+    return Alert;
+  }();
 
   exports.Alert = Alert;
 

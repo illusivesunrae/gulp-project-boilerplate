@@ -2,7 +2,9 @@ const { dest, series, src, watch } = require('gulp');
 const babel = require('rollup-plugin-babel');
 const banner = require('gulp-header');
 const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
 const rollup = require('rollup');
+const uglify = require('gulp-uglify');
 const pkg = require('./package.json');
 
 const bannerTemplate = [`/*! 
@@ -45,6 +47,13 @@ function bannerJS() {
     .pipe(dest('./dist/'))
 }
 
-exports.build = series(bundleJS, bannerJS);
+function minifyJS() {
+  return src('./dist/main.js')
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest('./dist'));
+}
+
+exports.build = series(bundleJS, minifyJS, bannerJS);
 
 exports.default = server;
