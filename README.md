@@ -28,3 +28,11 @@ Next you'll need to install it's dependencies via npm:
 ```
 npm install
 ```
+
+## Local development
+
+A local development server has been configured to run on `http://localhost:3000/`. It has also been configured to watch your files for changes and refresh the web browser as necessary. You can start the development server by running:
+
+```
+npm run start
+```
