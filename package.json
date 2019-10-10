@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.6.3",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-header": "^2.0.9",
     "rollup": "^1.23.1",
     "rollup-plugin-babel": "^4.3.3"
   }
