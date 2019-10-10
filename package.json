@@ -1,0 +1,19 @@
+{
+  "name": "gulp-project-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a template repo for creating projects dependent on Gulp",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illusivesunrae/gulp-project-boilerplate.git"
+  },
+  "author": "Rachel O'Connor",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/illusivesunrae/gulp-project-boilerplate/issues"
+  },
+  "homepage": "https://github.com/illusivesunrae/gulp-project-boilerplate#readme"
+}
