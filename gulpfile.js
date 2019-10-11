@@ -14,8 +14,9 @@ const bannerTemplate = [`/*!
 * SPDX-License-Identifier: BSD-3-Clause
 */\n`];
 
-function reload() {
+function reload(done) {
   browserSync.reload();
+  done();
 }
 
 function server() {
