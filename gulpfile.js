@@ -26,7 +26,7 @@ function server() {
     }
   });
   watch('src/**.js', { ignoreInitial: false }, bundleJS);
-  watch('dist/*.html', reload);
+  watch('dist/*.html', { ignoreInitial: false }, reload);
 }
 
 function bundleJS() {
